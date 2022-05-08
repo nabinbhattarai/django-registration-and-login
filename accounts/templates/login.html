@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+</head>
+<body>
+    <center>
+
+        <form action="login" method="post">
+            {% csrf_token %}
+            Username: <input type="text" name="username" placeholder="username"><br><br>
+            Password: <input type="password" name="password" placeholder="password"><br><br>
+            <input type="Submit">
+        </form>
+        <h2>Don't have an account???</h2><a href="{% url 'register' %}">click here</a>
+    </center>
+
+
+    <div>
+            {% for message in messages %}
+            <h3> {{message}}  </h3>
+            {% endfor %}
+    </div>
+</body>
+</html>
