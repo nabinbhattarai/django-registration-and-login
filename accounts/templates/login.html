@@ -13,8 +13,10 @@
 
         <form action="login" method="post">
             {% csrf_token %}
-            Username: <input type="text" name="username" placeholder="username"><br><br>
-            Password: <input type="password" name="password" placeholder="password"><br><br>
+            <label for="username">Username:</label>
+            <input type="text" name="username" placeholder="username"><br><br>
+            <label for="password">Password:</label>
+            <input type="password" name="password" placeholder="password"><br><br>
             <input type="Submit">
         </form>
         <h2>Don't have an account???</h2><a href="{% url 'register' %}">click here</a>
